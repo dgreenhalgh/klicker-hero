@@ -24,10 +24,12 @@ class KlickerActivity : AppCompatActivity() {
     }
     
     private fun updateKount(kareer: Kareer) {
-        kareer.kount++
+        kareer.incrementKount()
+        val tierColor = ContextCompat.getColor(this, kareer.tier.kolorResId)
+
         kounterTextView.apply {
             text = "Count: ${kareer.kount}"
-            setBackgroundColor(ContextCompat.getColor(this@KlickerActivity, kareer.tier.kolorResId))
+            setBackgroundColor(tierColor)
         }
     }
 }

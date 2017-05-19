@@ -3,15 +3,14 @@ package com.dgreenhalgh.android.klickerhero
 import android.support.annotation.ColorRes
 import com.dgreenhalgh.android.klickerhero.Tier.Companion.getTierForLevel
 
-class Kareer(_kount: Int = 0, var tier: Tier = Tier.Baby) {
+data class Kareer(var kount: Int = 0, var tier: Tier = Tier.Baby) {
 
-    var kount = _kount
-        set(value) {
-            field = value
-            if (value > tier.maxKlicks) {
-                tier = getTierForLevel(tier.level + 1)
-            }
+    fun incrementKount() {
+        kount++
+        if (kount > tier.maxKlicks) {
+            tier = getTierForLevel(tier.level + 1)
         }
+    }
 }
 
 enum class Tier(var level : Int = 0, val maxKlicks : Int, @ColorRes val kolorResId : Int) {
@@ -24,6 +23,7 @@ enum class Tier(var level : Int = 0, val maxKlicks : Int, @ColorRes val kolorRes
     companion object {
         fun getTierForLevel(level: Int) : Tier {
             Tier.values()
+                    .asSequence()
                     .filter { it.level == level }
                     .forEach { return it }
 
