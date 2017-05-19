@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- Tier colors -->
+    <color name="baby_blue">#CCFFFF</color>
+    <color name="light_green">#90EE90</color>
+    <color name="light_red">#FF6666</color>
+    <color name="light_yellow">#FFFF99</color>
+    <color name="grandmaster_purple">#CC99FF</color>
 </resources>
