@@ -11,7 +11,6 @@ class KlickerActivity : AppCompatActivity() {
     private lateinit var kounterTextView : TextView
     private lateinit var klickerButton : Button
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_klicker)
